@@ -8,6 +8,7 @@ import {
 import {Button} from "@/components/ui/button";
 import {AppCard} from "@/components/molecules/AppCard";
 import {PopupAppEdit} from "@/components/organisms";
+import { FaPlus } from "react-icons/fa";
 
 const Page = () => {
     const initialApps = [
@@ -28,7 +29,7 @@ const Page = () => {
                 <div className="px-[36px] pt-[24px] pb-[48px]">
                <div className="flex flex-row gap-x-[36px] items-center">
                     <h4 className="text-2xl text-[#1C274C] font-extrabold font-inter">Application</h4>
-                    <Button variant='default' className="bg-[#F6F6F6] rounded-none border-[1px] border-[#1C274C]/50 text-[#1C274C] hover:bg-gray-500/50" onClick={openPopupCreate}>+ Create an App</Button>
+                    <Button variant='default' className=" bg-[#F6F6F6] font-bold rounded-none border-[1px] border-[#1C274C]/50 text-[#1C274C] hover:bg-gray-500/50" onClick={openPopupCreate}><FaPlus  size={15} /> Create an App</Button>
                </div>
                     <div className="flex flex-row flex-wrap gap-y-[36px] mt-[36px]">
                     {initialApps.map((app, index) => (
