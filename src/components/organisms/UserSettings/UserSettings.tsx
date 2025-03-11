@@ -11,7 +11,7 @@ export default function UserSettings() {
 
     return (
         <div className="w-full mx-auto p-6 max-w-screen-xl">
-            <h2 className="text-2xl font-bold">Account Settings</h2>
+            <h2 className="text-4xl font-bold text-[#1c274c]" >Account Settings</h2>
             <div className={`bg-white shadow-md rounded-lg p-6`}>
                 <div className="flex items-center gap-4">
                     <div className="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center">

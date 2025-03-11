@@ -38,7 +38,7 @@ const AppCard = ({ title, name }: Props) => {
                     <div className="border-1 border-gray-300 p-2" onClick={openPopupDelete}>
                         <RiDeleteBin6Line className="text-[20px] text-gray-400 hover:text-[#FF0000]" />
                     </div>
-                    <Link href="/pages/editor">
+                    <Link href="/editor">
                         <div className="border-1 border-gray-300 p-2">
                             <PiArrowArcRight className="text-[20px] text-gray-400 hover:text-[#1C274C]" />
                         </div>

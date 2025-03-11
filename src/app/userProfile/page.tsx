@@ -25,14 +25,14 @@ const Page = () => {
                 <Header title="Dashboard" name="Ivan" />
                 <div className="flex h-[calc(100vh-75px)]">
                     {/* Sidebar Navigation */}
-                    <div className="flex flex-col pt-4 px-2 gap-2 border-r border-gray-300">
+                    <div className="flex flex-col items-center pt-4 px-2 gap-2 border-r border-gray-300">
                         {tabs.map(({ name, icon }) => (
                             <Button
                                 key={name}
                                 variant="outline"
                                 onClick={() => setTab(name)}
                                 className={clsx(
-                                    "flex items-center justify-start gap-4 w-48 px-4 py-2 text-lg font-semibold border rounded-none transition",
+                                    "flex items-center justify-start gap-4 w-48 px-4 py-2 text-[15px] font-normal border rounded-none transition",
                                     "border-gray-400 bg-gray-200 text-[#1C274C] hover:bg-[#1C274C] hover:text-white",
                                     tab === name && "bg-[#1C274C] text-white"
                                 )}

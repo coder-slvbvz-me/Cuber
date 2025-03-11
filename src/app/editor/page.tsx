@@ -37,7 +37,7 @@ export default function CodeEditor() {
     return (
         <div className="min-h-screen p-4 bg-gray-100 dark:bg-gray-900 text-black dark:text-white">
             <div className="flex justify-between items-center mb-4">
-                <Link href="/pages/dashboard">
+                <Link href="/dashboard">
                     <Button onClick={()=> resetTheme()}  className="flex items-center gap-2">
                         <ArrowLeft size={20} />
                     </Button>
