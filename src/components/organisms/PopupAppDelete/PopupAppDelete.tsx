@@ -4,7 +4,8 @@ import React, { useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import { Input, Button } from "@/app/components/atoms";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import { PopupAppEditProps } from "@/types";
 
 const PopupAppDelete = ({ isOpen, onClose, Name }:PopupAppEditProps) => {

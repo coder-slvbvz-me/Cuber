@@ -1,6 +1,6 @@
 'use client'
 import React from 'react';
-import {MainLogo, UserProfile,DashboardIcon} from "@/app/components/svg";
+import {MainLogo, UserProfile,DashboardIcon} from "@/components/svg";
 import { usePathname } from 'next/navigation'
 import Link from "next/link";
 

@@ -4,7 +4,7 @@ const variants = {
     outline: "border border-gray-300 text-gray-700 hover:bg-gray-100",
     destructive: "bg-red-600 text-white hover:bg-red-700",
 };
-const Button = ({ children, variant = "default", className = "", ...props }: { children: React.ReactNode; variant?: keyof typeof variants; className?: string; [key: string]: unknown }) => {
+const Button = ({ children, variant = "default", className = "", ...props }: { children: React.ReactNode; variant?: keyof typeof variants; className?: string; }) => {
     const base = "px-4 py-2 rounded-md font-medium transition";
 
     return <button className={`${base} ${variants[variant as keyof typeof variants]} ${className}`} {...props}>{children}</button>;

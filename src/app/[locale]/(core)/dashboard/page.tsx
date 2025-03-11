@@ -4,10 +4,10 @@ import React, {useState} from 'react';
 import {
     Header,
     Sidebar
-} from "@/app/components/molecules";
-import {Button} from "@/app/components/atoms";
-import {AppCard} from "@/app/components/molecules/AppCard";
-import {PopupAppEdit} from "@/app/components/organisms";
+} from "@/components/molecules";
+import {Button} from "@/components/ui/button";
+import {AppCard} from "@/components/molecules/AppCard";
+import {PopupAppEdit} from "@/components/organisms";
 
 const Page = () => {
     const initialApps = [
@@ -28,7 +28,7 @@ const Page = () => {
                 <div className="px-[36px] pt-[24px] pb-[48px]">
                <div className="flex flex-row gap-x-[36px] items-center">
                     <h4 className="text-2xl text-[#1C274C] font-extrabold font-inter">Application</h4>
-                    <button className="btn-primary bg-[#F6F6F6] h-[45px] w-[150px] font-bold border-[1px] border-gray-300 text-[#1C274C]" onClick={openPopupCreate}>+ Create an App</button>
+                    <Button variant='default' className="bg-[#F6F6F6] rounded-none border-[1px] border-[#1C274C]/50 text-[#1C274C] hover:bg-gray-500/50" onClick={openPopupCreate}>+ Create an App</Button>
                </div>
                     <div className="flex flex-row flex-wrap gap-y-[36px] mt-[36px]">
                     {initialApps.map((app, index) => (

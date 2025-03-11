@@ -1,6 +1,6 @@
 'use client'
 import { useState } from "react";
-import { Button } from "@/app/components/atoms";
+import { Button } from "@/components/ui/button";
 import {Moon, Sun, Folder, ArrowLeft} from "lucide-react";
 import { Sandpack } from "@codesandbox/sandpack-react";
 import { githubLight, gruvboxDark } from "@codesandbox/sandpack-themes";

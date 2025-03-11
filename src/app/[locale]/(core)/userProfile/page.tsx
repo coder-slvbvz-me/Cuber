@@ -1,101 +1,54 @@
-'use client'
+'use client';
 
-import React, {useState} from 'react';
-import {Button} from "@mui/material"
-import {
-    Header,
-    Sidebar
-} from "@/app/components/molecules";
-import {GrView} from "react-icons/gr";
-import {CiSettings} from "react-icons/ci";
-import {MdLockOutline} from "react-icons/md";
-import {SecuritySettings, UserSettings} from '@/app/components/organisms';
+import React, { useState } from 'react';
+import { Button } from "@/components/ui/button";
+import { Header, Sidebar } from "@/components/molecules";
+import { GrView } from "react-icons/gr";
+import { CiSettings } from "react-icons/ci";
+import { MdLockOutline } from "react-icons/md";
+import { SecuritySettings, UserSettings } from '@/components/organisms';
+import clsx from "clsx";
 
 const Page = () => {
     const [tab, setTab] = useState("Settings");
+
+    const tabs = [
+        { name: "Overview", icon: <GrView size={21} /> },
+        { name: "Settings", icon: <CiSettings size={21} /> },
+        { name: "Security", icon: <MdLockOutline size={21} /> }
+    ];
+
     return (
-        <div className="flex flex-row h-screen w-screen items-start justify-start">
+        <div className="flex h-screen w-screen">
             <Sidebar />
-            <div className="flex flex-col ">
+            <div className="flex flex-col flex-1">
                 <Header title="Dashboard" name="Ivan" />
-               <div className='flex flex-row  '>
-                   <div
-                       className='flex flex-col pt-4 ml-2 pr-2 gap-y-2 border-r-2 border-[#E6E6E6] h-[calc(100vh-75px)]'>
-                       <Button variant='outlined' sx={{
-                           color: "#1C274C",
-                           borderRadius: '0',
-                           border: '1px solid #a9a9a9',
-                           backgroundColor: "#efefef",
-                           textTransform: 'none',
-                           width: '200px',
-                           fontWeight: 'bold',
-                           fontSize: '16px',
-                           justifyContent: 'flex-start',
-                           '&:hover': {
-                               backgroundColor: "#1C274C",
-                               color: "#ffffff",
-                               svg: {color: "#ffffff"},
-                           },
-                           ...(tab === 'Overview' && {
-                               backgroundColor: "#1C274C",
-                               color: "#ffffff",
-                               svg: {color: "#ffffff"},})
-                       }} startIcon={<GrView size={21}/>} onClick={() => setTab('Overview')}>Overview</Button>
-                       <Button variant='outlined' sx={{
-                           color: "#1C274C",
-                           borderColor: "#a9a9a9",
-                           backgroundColor: "#efefef",
-                           borderRadius: '0',
-                           textTransform: 'none',
-                           width: '200px',
-                           fontWeight: 'bold',
-                           fontSize: '16px',
-                           justifyContent: 'flex-start',
-                           '&:hover': {
-                               backgroundColor: "#1C274C",
-                               color: "#ffffff",
-                               svg: {color: "#ffffff"},
-                           },
-                           ...(tab === 'Settings' && {
-                               backgroundColor: "#1C274C",
-                               color: "#ffffff",
-                               svg: {color: "#ffffff"},})
-                       }} startIcon={<CiSettings size={21}/> } onClick={() => setTab('Settings')}>Settings</Button>
-                       <Button variant='outlined' sx={{
-                           color: "#1C274C",
-                           borderColor: "#a9a9a9",
-                           borderRadius: '0',
-                           backgroundColor: "#efefef",
-                           textTransform: 'none',
-                           width: '200px',
-                           fontWeight: 'bold',
-                           fontSize: '16px',
-                           justifyContent: 'flex-start',
-                           '&:hover': {
-                               backgroundColor: "#1C274C",
-                               color: "#ffffff",
-                               svg: {color: "#ffffff"},
-                           },
-                           ...(tab === 'Security' && {
-                               backgroundColor: "#1C274C",
-                               color: "#ffffff",
-                               svg: {color: "#ffffff"},
-                           })
-                       }} startIcon={<MdLockOutline size={21}/>} onClick={() => setTab('Security')}>Security</Button>
-                   </div>
-                   <div>
-                       {tab === 'Settings' ? (
-                           <UserSettings />
-                       ) : tab === 'Overview' ? (
-                           <div>Overview</div>
-                       ) : tab==='Security' ? (
-                           <SecuritySettings/>
-                       ):null}
-                   </div>
-               </div>
+                <div className="flex h-[calc(100vh-75px)]">
+                    {/* Sidebar Navigation */}
+                    <div className="flex flex-col pt-4 px-2 gap-2 border-r border-gray-300">
+                        {tabs.map(({ name, icon }) => (
+                            <Button
+                                key={name}
+                                variant="outline"
+                                onClick={() => setTab(name)}
+                                className={clsx(
+                                    "flex items-center justify-start gap-4 w-48 px-4 py-2 text-lg font-semibold border rounded-none transition",
+                                    "border-gray-400 bg-gray-200 text-[#1C274C] hover:bg-[#1C274C] hover:text-white",
+                                    tab === name && "bg-[#1C274C] text-white"
+                                )}
+                            >
+                                {icon} {name}
+                            </Button>
+                        ))}
+                    </div>
 
-
-
+                    {/* Content */}
+                    <div className="p-4 flex-1">
+                        {tab === 'Settings' && <UserSettings />}
+                        {tab === 'Overview' && <div>Overview</div>}
+                        {tab === 'Security' && <SecuritySettings />}
+                    </div>
+                </div>
             </div>
         </div>
     );

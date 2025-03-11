@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from "react";
-import {Input,Button} from "@/app/components/atoms"
+import {Button} from "@/components/ui/button"
+import {Input} from "@/components/ui/input"
 import { X } from "lucide-react";
 import { PopupAppEditProps } from "@/types";
 

@@ -1,11 +1,11 @@
 'use client'
 import React, { useState } from 'react';
 import { BsPencil } from "react-icons/bs";
-import { DashboardIcon } from "@/app/components/svg";
+import { DashboardIcon } from "@/components/svg";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { PiArrowArcRight } from "react-icons/pi";
 import Link from "next/link";
-import {PopupAppDelete,PopupAppEdit} from "@/app/components/organisms";
+import {PopupAppDelete,PopupAppEdit} from "@/components/organisms";
 type Props = {
     title: string;
     name: string;

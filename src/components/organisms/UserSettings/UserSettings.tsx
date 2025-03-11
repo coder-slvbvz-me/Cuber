@@ -1,7 +1,8 @@
 "use client"
 import { useState } from "react";
 import { Upload, Mail, Lock, Trash } from "lucide-react";
-import {Button,Input} from "@/app/components/atoms";
+import {Button} from "@/components/ui/button"
+import {Input} from "@/components/ui/input"
 
 export default function UserSettings() {
     const [firstName, setFirstName] = useState("Ivan");
